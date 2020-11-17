@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptiekProject", "OptiekProject.csproj", "{D45DC93A-BE44-42C7-8342-5BA9026B82EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D45DC93A-BE44-42C7-8342-5BA9026B82EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45DC93A-BE44-42C7-8342-5BA9026B82EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45DC93A-BE44-42C7-8342-5BA9026B82EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45DC93A-BE44-42C7-8342-5BA9026B82EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E921027B-7BBE-4A96-8D60-EE48E7BE56E6}
+	EndGlobalSection
+EndGlobal
