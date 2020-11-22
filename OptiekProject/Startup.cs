@@ -8,11 +8,10 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using OptiekProject.Data;
+using Project_Optiek.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Project_Optiek.Data;
 
 namespace Project_Optiek
 {
@@ -29,10 +28,13 @@ namespace Project_Optiek
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            //services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,7 +68,6 @@ namespace Project_Optiek
             });
         }
 
-        /*
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
         {
             RoleManager<IdentityRole> RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -80,6 +81,8 @@ namespace Project_Optiek
                 roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin"));
             }
             // Assign Admin role to the main user.
+            //!!!!!!!!
+            //To Do: Hier mail aanpassen naar mail van admin
             IdentityUser user = Context.Users.FirstOrDefault(u => u.Email == "test@example.com");
             if (user != null)
             {
@@ -95,6 +98,5 @@ namespace Project_Optiek
                 }
             }
         }
-        */
     }
 }

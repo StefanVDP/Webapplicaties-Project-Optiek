@@ -10,6 +10,5 @@ namespace Project_Optiek.Models
         public int AccountTypeID { get; set; }
         public string Naam { get; set; }
         public ICollection<Gebruiker> Gebruikers { get; set; }
-
     }
 }

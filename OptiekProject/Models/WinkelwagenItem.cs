@@ -7,7 +7,7 @@ namespace Project_Optiek.Models
 {
     public class WinkelwagenItem
     {
-        public int WinkelwagenID { get; set; }
+        public int WinkelwagenItemID { get; set; }
         public int GebruikerID { get; set; }
         public Gebruiker Gebruiker { get; set; }
         public int ProductID { get; set; }
