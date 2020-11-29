@@ -66,6 +66,7 @@ namespace Project_Optiek
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            //CreateUserRoles(serviceProvider).Wait();
         }
 
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
@@ -83,7 +84,7 @@ namespace Project_Optiek
             // Assign Admin role to the main user.
             //!!!!!!!!
             //To Do: Hier mail aanpassen naar mail van admin
-            IdentityUser user = Context.Users.FirstOrDefault(u => u.Email == "test@example.com");
+            IdentityUser user = Context.Users.FirstOrDefault(u => u.Email == "info@OptiekVanDePutte.be");
             if (user != null)
             {
                 DbSet<IdentityUserRole<string>> roles = Context.UserRoles;

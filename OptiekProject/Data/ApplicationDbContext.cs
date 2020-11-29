@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Project_Optiek.Models;
+using Project_Optiek.Areas.Identity.Data;
 
 namespace Project_Optiek.Data
 {
@@ -27,7 +28,6 @@ namespace Project_Optiek.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //todo ints verwijderen
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<AccountType>().ToTable("AccountType");
@@ -45,6 +45,8 @@ namespace Project_Optiek.Data
             modelBuilder.Entity<Sterkte>().ToTable("Sterkte");
 
             modelBuilder.Entity<WinkelwagenItem>().ToTable("WinkelwagenItem");
+
+            modelBuilder.Entity<CustomUser>().HasOne(k => k.Gebruiker).WithOne(c => c.CustomUser).HasForeignKey<Gebruiker>(k => k.CustomUserID);
         }
     }
 }
