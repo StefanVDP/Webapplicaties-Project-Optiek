@@ -38,7 +38,7 @@ namespace Project_Optiek
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -66,7 +66,7 @@ namespace Project_Optiek
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-            //CreateUserRoles(serviceProvider).Wait();
+            CreateUserRoles(serviceProvider).Wait();
         }
 
         private async Task CreateUserRoles(IServiceProvider serviceProvider)
@@ -83,7 +83,6 @@ namespace Project_Optiek
             }
             // Assign Admin role to the main user.
             //!!!!!!!!
-            //To Do: Hier mail aanpassen naar mail van admin
             IdentityUser user = Context.Users.FirstOrDefault(u => u.Email == "info@OptiekVanDePutte.be");
             if (user != null)
             {

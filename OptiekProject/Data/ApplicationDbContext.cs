@@ -41,12 +41,13 @@ namespace Project_Optiek.Data
             modelBuilder.Entity<Product>().ToTable("Product");
             modelBuilder.Entity<Product>().Property(p => p.Naam).IsRequired();
             modelBuilder.Entity<Product>().Property(p => p.Prijs).IsRequired();
+            modelBuilder.Entity<Product>().Property(e => e.Prijs).HasColumnType("decimal(18,2)");
 
             modelBuilder.Entity<Sterkte>().ToTable("Sterkte");
 
             modelBuilder.Entity<WinkelwagenItem>().ToTable("WinkelwagenItem");
 
-            modelBuilder.Entity<CustomUser>().HasOne(k => k.Gebruiker).WithOne(c => c.CustomUser).HasForeignKey<Gebruiker>(k => k.CustomUserID);
+            modelBuilder.Entity<CustomUser>().HasOne(k => k.Gebruiker).WithOne(c => c.CustomUser).HasForeignKey<Gebruiker>(k => k.UserID);
         }
     }
 }

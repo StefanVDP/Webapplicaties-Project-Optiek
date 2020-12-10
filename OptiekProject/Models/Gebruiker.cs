@@ -16,7 +16,7 @@ namespace Project_Optiek.Models
         public string EmailAdress { get; set; }
         public string Woonplaats { get; set; }
         public string Adres { get; set; }
-        public int CustomUserID { get; set; }
+        public string UserID { get; set; }
         public CustomUser CustomUser { get; set; }
         public DateTime Geboortedatum { get; set; }
         public string BTW_Nummer { get; set; }
