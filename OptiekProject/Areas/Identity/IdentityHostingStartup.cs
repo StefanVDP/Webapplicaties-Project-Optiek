@@ -7,8 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-[assembly: HostingStartup(typeof(HelloCore.Areas.Identity.IdentityHostingStartup))]
-namespace HelloCore.Areas.Identity
+[assembly: HostingStartup(typeof(Project_Optiek.Areas.Identity.IdentityHostingStartup))]
+namespace Project_Optiek.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {

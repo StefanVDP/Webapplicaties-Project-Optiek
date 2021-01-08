@@ -6,13 +6,19 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Project_Optiek.Models;
 using Project_Optiek.Areas.Identity.Data;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore.Scaffolding;
 
 namespace Project_Optiek.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : IdentityDbContext<CustomUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext()
+        {
+        }
+
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
         {
         }
 
@@ -43,11 +49,17 @@ namespace Project_Optiek.Data
             modelBuilder.Entity<Product>().Property(p => p.Prijs).IsRequired();
             modelBuilder.Entity<Product>().Property(e => e.Prijs).HasColumnType("decimal(18,2)");
 
+            //modelBuilder.Entity<Product>().HasDiscriminator<string>("Product_Type").HasValue<LensProduct>("lens").HasValue<Bril>("Bril");
+
             modelBuilder.Entity<Sterkte>().ToTable("Sterkte");
 
             modelBuilder.Entity<WinkelwagenItem>().ToTable("WinkelwagenItem");
 
             modelBuilder.Entity<CustomUser>().HasOne(k => k.Gebruiker).WithOne(c => c.CustomUser).HasForeignKey<Gebruiker>(k => k.UserID);
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=edudb.thomasmore.be,3000;Database=PR_r0595358;User Id=pr__r0595358;Password=pr4you");
         }
     }
 }
