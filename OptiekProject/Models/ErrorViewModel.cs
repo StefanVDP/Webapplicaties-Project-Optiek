@@ -1,6 +1,6 @@
 using System;
 
-namespace OptiekProject.Models
+namespace Project_Optiek.Models
 {
     public class ErrorViewModel
     {

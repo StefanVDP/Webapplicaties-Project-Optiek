@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Project_Optiek.Areas.Identity.Data;
 
 namespace Project_Optiek.Models
 {
@@ -15,6 +16,8 @@ namespace Project_Optiek.Models
         public string EmailAdress { get; set; }
         public string Woonplaats { get; set; }
         public string Adres { get; set; }
+        public string UserID { get; set; }
+        public CustomUser CustomUser { get; set; }
         public DateTime Geboortedatum { get; set; }
         public string BTW_Nummer { get; set; }
         public string Oogsterkte { get; set; }

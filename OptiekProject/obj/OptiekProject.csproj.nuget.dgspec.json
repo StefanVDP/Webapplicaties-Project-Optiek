@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gebruiker\\Desktop\\Webapplicaties real\\OptiekProject\\OptiekProject.csproj": {}
+    "C:\\Users\\Gebruiker\\Documents\\GitHub\\Webapplicaties-Project-Optiek\\OptiekProject\\OptiekProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gebruiker\\Desktop\\Webapplicaties real\\OptiekProject\\OptiekProject.csproj": {
+    "C:\\Users\\Gebruiker\\Documents\\GitHub\\Webapplicaties-Project-Optiek\\OptiekProject\\OptiekProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\Desktop\\Webapplicaties real\\OptiekProject\\OptiekProject.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\Documents\\GitHub\\Webapplicaties-Project-Optiek\\OptiekProject\\OptiekProject.csproj",
         "projectName": "OptiekProject",
-        "projectPath": "C:\\Users\\Gebruiker\\Desktop\\Webapplicaties real\\OptiekProject\\OptiekProject.csproj",
+        "projectPath": "C:\\Users\\Gebruiker\\Documents\\GitHub\\Webapplicaties-Project-Optiek\\OptiekProject\\OptiekProject.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\Desktop\\Webapplicaties real\\OptiekProject\\obj\\",
+        "outputPath": "C:\\Users\\Gebruiker\\Documents\\GitHub\\Webapplicaties-Project-Optiek\\OptiekProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",

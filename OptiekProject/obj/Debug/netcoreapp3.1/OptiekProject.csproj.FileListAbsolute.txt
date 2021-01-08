@@ -73,3 +73,11 @@ C:\Users\Gebruiker\Desktop\Webapplicaties real\OptiekProject\obj\Debug\netcoreap
 C:\Users\Gebruiker\Desktop\Webapplicaties real\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gebruiker\Desktop\Webapplicaties real\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.RazorAssemblyInfo.cache
 C:\Users\Gebruiker\Desktop\Webapplicaties real\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.RazorAssemblyInfo.cs
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.csprojAssemblyReference.cache
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.AssemblyInfoInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.AssemblyInfo.cs
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.csproj.CoreCompileInputs.cache
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.RazorAssemblyInfo.cache
+C:\Users\Gebruiker\Documents\GitHub\Webapplicaties-Project-Optiek\OptiekProject\obj\Debug\netcoreapp3.1\OptiekProject.RazorAssemblyInfo.cs

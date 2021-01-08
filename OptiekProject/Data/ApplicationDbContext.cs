@@ -1,22 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using System.Threading.Tasks;
-using Project_Optiek.Models;
 using Microsoft.EntityFrameworkCore;
+using Project_Optiek.Models;
+using Project_Optiek.Areas.Identity.Data;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore.Scaffolding;
 
 namespace Project_Optiek.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<CustomUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        public ApplicationDbContext()
         {
         }
 
-        public DbSet<AccountType> AccountTypes { get; set;}
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
+        {
+        }
+
+        public DbSet<AccountType> AccountTypes { get; set; }
         public DbSet<Bestelling> Bestellingen { get; set; }
         public DbSet<BestellingItem> bestellingItems { get; set; }
         public DbSet<Bril> Brillen { get; set; }
@@ -28,37 +34,32 @@ namespace Project_Optiek.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<AccountType>().ToTable("AccountType");
             modelBuilder.Entity<AccountType>().Property(p => p.Naam).IsRequired();
 
             modelBuilder.Entity<Bestelling>().ToTable("Bestelling");
-            modelBuilder.Entity<Bestelling>().Property(p => p.GebruikerID).IsRequired();
             modelBuilder.Entity<Bestelling>().Property(p => p.Besteldatum).IsRequired();
 
             modelBuilder.Entity<BestellingItem>().ToTable("BestellingItem");
-            modelBuilder.Entity<BestellingItem>().Property(p => p.BestellingID).IsRequired();
-            modelBuilder.Entity<BestellingItem>().Property(p => p.ProductID).IsRequired();
-            modelBuilder.Entity<BestellingItem>().Property(p => p.Aantal).IsRequired();
 
             modelBuilder.Entity<Product>().ToTable("Product");
             modelBuilder.Entity<Product>().Property(p => p.Naam).IsRequired();
             modelBuilder.Entity<Product>().Property(p => p.Prijs).IsRequired();
-            modelBuilder.Entity<Product>().Property(p => p.SterkteID).IsRequired();
+            modelBuilder.Entity<Product>().Property(e => e.Prijs).HasColumnType("decimal(18,2)");
 
-            modelBuilder.Entity<Bril>().ToTable("Bril");
-            modelBuilder.Entity<Bril>().Property(p => p.BrilType).IsRequired();
-            modelBuilder.Entity<Bril>().Property(p => p.ProductID).IsRequired();
-
-            modelBuilder.Entity<LensProduct>().ToTable("LensProduct");
-            modelBuilder.Entity<LensProduct>().Property(p => p.LensType).IsRequired();
+            //modelBuilder.Entity<Product>().HasDiscriminator<string>("Product_Type").HasValue<LensProduct>("lens").HasValue<Bril>("Bril");
 
             modelBuilder.Entity<Sterkte>().ToTable("Sterkte");
-            modelBuilder.Entity<Sterkte>().Property(p => p.sterkte).IsRequired();
 
             modelBuilder.Entity<WinkelwagenItem>().ToTable("WinkelwagenItem");
-            modelBuilder.Entity<WinkelwagenItem>().Property(p => p.GebruikerID).IsRequired();
-            modelBuilder.Entity<WinkelwagenItem>().Property(p => p.ProductID).IsRequired();
-            modelBuilder.Entity<WinkelwagenItem>().Property(p => p.Aantal).IsRequired();
+
+            modelBuilder.Entity<CustomUser>().HasOne(k => k.Gebruiker).WithOne(c => c.CustomUser).HasForeignKey<Gebruiker>(k => k.UserID);
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=edudb.thomasmore.be,3000;Database=PR_r0595358;User Id=pr__r0595358;Password=pr4you");
         }
     }
 }

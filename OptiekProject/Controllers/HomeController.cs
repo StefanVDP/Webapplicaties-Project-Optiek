@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using OptiekProject.Models;
+using Project_Optiek.Models;
 
-namespace OptiekProject.Controllers
+namespace Project_Optiek.Controllers
 {
     public class HomeController : Controller
     {
